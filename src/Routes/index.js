@@ -10,6 +10,9 @@ import {
   Feedbacks,
   Forms,
   Views,
+  Reservasi,
+  TransactionUser,
+  TransactionAdmin,
 } from '../Pages';
 
 export const getPublicRoutes = () => [
@@ -57,6 +60,27 @@ export const getDashboardRoutes = () => [
     isCaseSensitive: false,
     isDisabled: false,
     element: <Dashboard />,
+  },
+  {
+    path: '/reservasi',
+    isIndex: true,
+    isCaseSensitive: false,
+    isDisabled: false,
+    element: <Reservasi />,
+  },
+  {
+    path: '/transaction-history',
+    isIndex: true,
+    isCaseSensitive: false,
+    isDisabled: false,
+    element: <TransactionUser />,
+  },
+  {
+    path: '/transaction-admin',
+    isIndex: true,
+    isCaseSensitive: false,
+    isDisabled: false,
+    element: <TransactionAdmin />,
   },
   {
     path: '/forms',

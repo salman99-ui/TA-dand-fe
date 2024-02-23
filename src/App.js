@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { getDashboardRoutes, getPublicRoutes } from './Routes';
 import { DashboardLayout1 } from './Layouts';
+import PrivateRoute from './Routes/privateRoute';
 
 const publicRoutes = getPublicRoutes();
 const dashboardRoutes = getDashboardRoutes();
@@ -17,9 +18,9 @@ const App = () => (
                 index={route.isIndex}
                 caseSensitive={route.isCaseSensitive}
                 path={route.path}
-                element={route.element}
+                element={<PrivateRoute>{route.element}</PrivateRoute>}
               />
-            )
+            ),
         )}
       </Route>
       {/* === Public Route === */}
@@ -33,7 +34,7 @@ const App = () => (
               path={route.path}
               element={route.element}
             />
-          )
+          ),
       )}
     </Routes>
   </BrowserRouter>

@@ -1,112 +1,76 @@
+import { Form, Input } from 'antd';
 import React from 'react';
-import {
-  Button,
-  Card,
-  Checkbox,
-  Col,
-  Divider,
-  Form,
-  Input,
-  Layout,
-  Row,
-  Space,
-  Typography,
-} from 'antd';
-import { Link } from 'react-router-dom';
-import { FacebookFilled, GoogleOutlined, LinkedinFilled } from '@ant-design/icons';
+import { useNavigate } from 'react-router-dom';
+import { handleLogin } from '../../../API';
 
-const { Content } = Layout;
-const { Title, Text } = Typography;
-
-const Login = () => {
-  const onFinish = () => {};
-  const onFinishFailed = () => {};
-
+function Index() {
+  const navigate = useNavigate();
+  const handleSubmit = (value) => {
+    handleLogin(value);
+  };
   return (
-    <Layout>
-      <Content>
-        <Row align="middle" className="min-h-screen p-5">
-          <Col
-            xs={{ span: 24, offset: 0 }}
-            md={{ span: 16, offset: 4 }}
-            xl={{ span: 10, offset: 7 }}
-            xxl={{ span: 6, offset: 9 }}
-          >
-            <Card>
-              <Title level={2}>Login</Title>
-              <Form
-                name="login"
-                initialValues={{
-                  remember: true,
-                }}
-                onFinish={onFinish}
-                onFinishFailed={onFinishFailed}
-                autoComplete="off"
-                layout="vertical"
-              >
-                <Form.Item
-                  label="E-mail"
-                  name="email"
-                  rules={[
-                    {
-                      required: true,
-                      message: 'Please input your email!',
-                    },
-                  ]}
-                >
-                  <Input />
-                </Form.Item>
-
-                <Form.Item
-                  label="Password"
-                  name="password"
-                  rules={[
-                    {
-                      required: true,
-                      message: 'Please input your password!',
-                    },
-                  ]}
-                >
-                  <Input.Password />
-                </Form.Item>
-
-                <Form.Item name="remember" valuePropName="checked">
-                  <Checkbox>Remember me</Checkbox>
-                </Form.Item>
-
-                <Form.Item>
-                  <Button type="primary" htmlType="submit" className="mb-2" block>
-                    Login
-                  </Button>
-                  <Row justify="end">
-                    <Link to="/forgotPassword">
-                      <Text type="secondary"> Forgot Password?</Text>
-                    </Link>
-                  </Row>
-                </Form.Item>
-
-                <Divider> OR </Divider>
-
-                <Row justify="center" className="mb-4">
-                  <Space wrap>
-                    <Button icon={<GoogleOutlined />} shape="circle" />
-                    <Button icon={<FacebookFilled />} shape="circle" />
-                    <Button icon={<LinkedinFilled />} shape="circle" />
-                  </Space>
-                </Row>
-
-                <Row justify="center">
-                  <Text type="secondary">
-                    Need an account? <Link to="/register"> REGISTER </Link>
-                  </Text>
-                </Row>
-              </Form>
-            </Card>
-          </Col>
-        </Row>
-      </Content>
-    </Layout>
+    <div className="min-h-screen">
+      <div className="min-h-screen">
+        <div className="flex min-h-screen">
+          <div className="flex-1 border-x-0 border-t-0 border-b-0 border-r border-solid border-[#1E1E1E]">
+            <div className="flex items-center h-full pl-6">
+              <p className="m-0 text-5xl font-bold">Bengkel Ahass Nabila</p>
+            </div>
+          </div>
+          <div className="flex-1">
+            <div className="px-5 flex items-center justify-center h-full">
+              <div className="w-2/3">
+                <Form onFinish={handleSubmit}>
+                  <Form.Item
+                    name="email"
+                    rules={[
+                      {
+                        required: true,
+                        message: 'Silahkan isi email',
+                      },
+                    ]}
+                  >
+                    <Input placeholder="email" size="large" />
+                  </Form.Item>
+                  <Form.Item
+                    name="password"
+                    rules={[
+                      {
+                        required: true,
+                        message: 'Silahkan isi email',
+                      },
+                    ]}
+                  >
+                    <Input.Password placeholder="password" size="large" />
+                  </Form.Item>
+                  <div className="mt-5">
+                    <button
+                      type="submit"
+                      className="bg-[#1E1E1E] text-base text-white border-none rounded-md block w-full text-center py-2.5"
+                    >
+                      Login
+                    </button>
+                  </div>
+                  <div className="mt-4">
+                    <p className="text-center">
+                      Dont have an account ?{' '}
+                      <button
+                        type="button"
+                        className="bg-transparent border-none font-bold cursor-pointer"
+                        onClick={() => navigate('/register')}
+                      >
+                        Sign up here
+                      </button>{' '}
+                    </p>
+                  </div>
+                </Form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
-};
+}
 
-export default Login;
+export default Index;

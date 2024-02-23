@@ -20,7 +20,7 @@ const HeaderDashboard1 = () => {
       'p-3',
       'w-full sticky top-0 z-50',
       'flex justify-between items-center',
-      'bg-header-light dark:bg-header-dark shadow'
+      'bg-header-light dark:bg-header-dark shadow',
     ),
   };
 

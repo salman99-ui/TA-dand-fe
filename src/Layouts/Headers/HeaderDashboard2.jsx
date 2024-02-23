@@ -19,7 +19,7 @@ const HeaderDashboard2 = () => {
       'p-3',
       'w-full sticky top-0 z-50',
       'flex justify-between items-center',
-      'text-white'
+      'text-white',
     ),
   };
 

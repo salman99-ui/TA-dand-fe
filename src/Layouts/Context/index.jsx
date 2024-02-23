@@ -14,7 +14,7 @@ const LayoutProvider = ({ children }) => {
     <LayoutContext.Provider
       value={React.useMemo(
         () => ({ isSidebarCollapsed, setIsSidebarCollapsed, toggleSidebar }),
-        [isSidebarCollapsed, setIsSidebarCollapsed, toggleSidebar]
+        [isSidebarCollapsed, setIsSidebarCollapsed, toggleSidebar],
       )}
     >
       <Layout className="min-h-screen">{children}</Layout>

@@ -1,146 +1,73 @@
+import { Form, Input } from 'antd';
 import React from 'react';
-import {
-  Button,
-  Card,
-  Checkbox,
-  Col,
-  Divider,
-  Form,
-  Input,
-  Layout,
-  Row,
-  Space,
-  Typography,
-} from 'antd';
-import { Link } from 'react-router-dom';
-import { FacebookFilled, GoogleOutlined, LinkedinFilled } from '@ant-design/icons';
+import { handleRegister } from '../../../API';
 
-const { Content } = Layout;
-const { Title, Text } = Typography;
-
-const Register = () => {
-  const onFinish = () => {};
-  const onFinishFailed = () => {};
-
+function Index() {
+  const handleSubmit = (value) => {
+    handleRegister(value);
+  };
   return (
-    <Layout>
-      <Content>
-        <Row align="middle" className="min-h-screen p-5">
-          <Col
-            xs={{ span: 24, offset: 0 }}
-            md={{ span: 16, offset: 4 }}
-            xl={{ span: 10, offset: 7 }}
-            xxl={{ span: 6, offset: 9 }}
-          >
-            <Card>
-              <Title level={2}>Register</Title>
-              <Form
-                name="Register"
-                initialValues={{
-                  remember: true,
-                }}
-                onFinish={onFinish}
-                onFinishFailed={onFinishFailed}
-                autoComplete="off"
-                layout="vertical"
-              >
-                <Form.Item
-                  label="Full Name"
-                  name="fullName"
-                  rules={[
-                    {
-                      required: true,
-                      message: 'Please input your full name!',
-                    },
-                  ]}
-                >
-                  <Input />
-                </Form.Item>
-
-                <Form.Item
-                  label="E-mail"
-                  name="email"
-                  rules={[
-                    {
-                      required: true,
-                      message: 'Please input your email!',
-                    },
-                  ]}
-                >
-                  <Input />
-                </Form.Item>
-
-                <Form.Item
-                  label="Password"
-                  name="password"
-                  rules={[
-                    {
-                      required: true,
-                      message: 'Please input your password!',
-                    },
-                  ]}
-                >
-                  <Input.Password />
-                </Form.Item>
-
-                <Form.Item
-                  label="Confirm Password"
-                  name="confirmPassword"
-                  rules={[
-                    {
-                      required: true,
-                      message: 'Please input your confirm password!',
-                    },
-                  ]}
-                >
-                  <Input.Password />
-                </Form.Item>
-
-                <Form.Item
-                  name="agreementCheck"
-                  valuePropName="checked"
-                  rules={[
-                    {
-                      required: true,
-                      message: 'Please check the agreement',
-                    },
-                  ]}
-                >
-                  <Checkbox>
-                    I have read, understood, and agreed to the{' '}
-                    <a href="#"> Terms of Use </a>
-                    and the <a href="#"> Privacy Policy </a>
-                  </Checkbox>
-                </Form.Item>
-
-                <Form.Item>
-                  <Button type="primary" htmlType="submit" className="mb-2" block>
-                    Register
-                  </Button>
-                </Form.Item>
-
-                <Divider> OR </Divider>
-
-                <Row justify="center" className="mb-4">
-                  <Space wrap>
-                    <Button icon={<GoogleOutlined />} shape="circle" />
-                    <Button icon={<FacebookFilled />} shape="circle" />
-                    <Button icon={<LinkedinFilled />} shape="circle" />
-                  </Space>
-                </Row>
-
-                <Row justify="center">
-                  <Text type="secondary">
-                    Already have an account? <Link to="/login"> LOGIN </Link>
-                  </Text>
-                </Row>
-              </Form>
-            </Card>
-          </Col>
-        </Row>
-      </Content>
-    </Layout>
+    <div className="min-h-screen">
+      <div className="min-h-screen">
+        <div className="flex min-h-screen">
+          <div className="flex-1 border-x-0 border-t-0 border-b-0 border-r border-solid border-[#1E1E1E]">
+            <div className="flex items-center h-full pl-6">
+              <p className="m-0 text-5xl font-bold">Bengkel Ahass Nabila</p>
+            </div>
+          </div>
+          <div className="flex-1">
+            <div className="px-5 flex items-center justify-center h-full">
+              <div className="w-2/3">
+                <Form onFinish={handleSubmit}>
+                  <Form.Item
+                    name="nama"
+                    rules={[
+                      {
+                        required: true,
+                        message: 'Silahkan isi nama',
+                      },
+                    ]}
+                  >
+                    <Input placeholder="Name" size="large" />
+                  </Form.Item>
+                  <Form.Item
+                    name="email"
+                    rules={[
+                      {
+                        required: true,
+                        message: 'Silahkan isi email',
+                      },
+                    ]}
+                  >
+                    <Input placeholder="email" size="large" />
+                  </Form.Item>
+                  <Form.Item
+                    name="password"
+                    rules={[
+                      {
+                        required: true,
+                        message: 'Silahkan isi email',
+                      },
+                    ]}
+                  >
+                    <Input.Password placeholder="password" size="large" />
+                  </Form.Item>
+                  <div className="mt-5">
+                    <button
+                      type="submit"
+                      className="bg-[#1E1E1E] text-base text-white border-none rounded-md block w-full text-center py-2.5"
+                    >
+                      Create Account
+                    </button>
+                  </div>
+                </Form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   );
-};
+}
 
-export default Register;
+export default Index;
