@@ -19,9 +19,10 @@ const SidebarDashboard1 = () => {
   const [profile, setProfile] = useState(null);
 
   useEffect(() => {
-    const dataProfile = JSON.parse(localStorage.getItem('profile')).data.id;
+    const dataProfile = localStorage.getItem('profile');
     if (dataProfile) {
-      handleProfile(dataProfile, setProfile);
+      const dataId = JSON.parse(localStorage.getItem('profile')).data.id;
+      handleProfile(dataId, setProfile);
     }
   }, []);
   return (

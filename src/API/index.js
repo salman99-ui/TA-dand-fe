@@ -23,9 +23,9 @@ export const handleProfile = (id, setData) => {
   });
 };
 
-export const handleReservasi = (body) => {
+export const handleReservasi = (body, success) => {
   axios.post(`${env}/reservasi`, body).then((response) => {
-    console.log('OK');
+    success(response.data);
   });
 };
 
@@ -39,4 +39,45 @@ export const handleHistoryReservasiAdmin = (setData) => {
   axios.get(`${env}/transaction-history`).then((response) => {
     setData(response.data.data);
   });
+};
+
+export const handleUpdateReservasi = (id, body, success) => {
+  axios.post(`${env}/update-reservasi/${id}`, body).then((result) => {
+    success();
+  });
+};
+
+export const handleDetailReservasi = (id, success) => {
+  console.log(id);
+  axios.get(`${env}/reservasi/${id}`).then((result) => {
+    success(result.data.data);
+  });
+};
+
+export const handlePayment = (body, success) => {
+  axios.post(`${env}/create-payment`, body).then((result) => {
+    success();
+  });
+};
+
+export const handleUpdateVaPayment = (body, success) => {
+  axios.post(`${env}/create-va`, body).then((result) => {
+    success();
+  });
+};
+
+// xendit
+export const handleCreateVa = (body, success) => {
+  const headers = {
+    headers: {
+      Authorization:
+        'Basic eG5kX2RldmVsb3BtZW50X2ZjZ1hnMEV3dzlFcXZqbzBBNGJmQm1BMEVTQlpRYW9JQ1RYQWttM0wzbjVnWlJja3pXRDFnRldLaWE5VW5oOg==',
+    },
+  };
+
+  axios
+    .post(`https://api.xendit.co/callback_virtual_accounts`, body, headers)
+    .then((responseXendit) => {
+      success(responseXendit);
+    });
 };

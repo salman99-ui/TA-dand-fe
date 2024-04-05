@@ -1,16 +1,67 @@
-import { DatePicker, Form, Input } from 'antd';
+import { DatePicker, Form, Input, message } from 'antd';
+import { Buffer } from 'buffer';
 import React from 'react';
 import dayjs from 'dayjs';
+// import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 import { handleReservasi } from '../../API';
 
+const env = 'http://localhost:4000';
+
 function Index() {
+  const navigate = useNavigate();
+
   const handleForm = (value) => {
     const dataProfile = JSON.parse(localStorage.getItem('profile')).data.id;
-    handleReservasi({
-      ...value,
-      user_id: dataProfile,
-      date: dayjs(value?.date?._d).format('YYYY-MM-DD'),
-    });
+    // const headers = {
+    //   headers: {
+    //     Authorization:
+    //       'Basic eG5kX2RldmVsb3BtZW50X2ZjZ1hnMEV3dzlFcXZqbzBBNGJmQm1BMEVTQlpRYW9JQ1RYQWttM0wzbjVnWlJja3pXRDFnRldLaWE5VW5oOg==',
+    //   },
+    // };
+
+    // create virtual account
+    // axios
+    //   .post(
+    //     `https://api.xendit.co/callback_virtual_accounts`,
+    //     {
+    //       external_id: 'va-1475804036622',
+    //       bank_code: 'BRI',
+    //       name: 'Michael Chen',
+    //       is_closed: true,
+    //       expected_amount: 50000,
+    //       expiration_date: '2024-03-18T17:00:00.000Z',
+    //     },
+    //     headers,
+    //   )
+    //   .then((responseXendit) => {
+    //     console.log(responseXendit.data);
+    //   });
+
+    // simulate payment
+    // axios
+    //   .post(
+    //     `https://api.xendit.co/callback_virtual_accounts/external_id=va-1475804036622/simulate_payment`,
+    //     {
+    //       amount: 50000,
+    //     },
+    //     headers,
+    //   )
+    //   .then((responseXendit) => {
+    //     console.log(responseXendit.data);
+    //   });
+
+    handleReservasi(
+      {
+        ...value,
+        user_id: dataProfile,
+        date: dayjs(value?.date?._d).format('YYYY-MM-DD'),
+      },
+      (valueSuccess) => {
+        message.success('Reservasi berhasil dilakukan');
+        navigate(`/reservasi/${valueSuccess?.id}`);
+      },
+    );
   };
   return (
     <div>

@@ -13,6 +13,8 @@ import {
   Reservasi,
   TransactionUser,
   TransactionAdmin,
+  Test,
+  ReservasiDetail,
 } from '../Pages';
 
 export const getPublicRoutes = () => [
@@ -69,6 +71,13 @@ export const getDashboardRoutes = () => [
     element: <Reservasi />,
   },
   {
+    path: '/reservasi/:id',
+    isIndex: true,
+    isCaseSensitive: false,
+    isDisabled: false,
+    element: <ReservasiDetail />,
+  },
+  {
     path: '/transaction-history',
     isIndex: true,
     isCaseSensitive: false,
@@ -81,6 +90,13 @@ export const getDashboardRoutes = () => [
     isCaseSensitive: false,
     isDisabled: false,
     element: <TransactionAdmin />,
+  },
+  {
+    path: '/test',
+    isIndex: true,
+    isCaseSensitive: false,
+    isDisabled: false,
+    element: <Test />,
   },
   {
     path: '/forms',

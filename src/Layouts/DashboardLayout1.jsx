@@ -1,7 +1,7 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { Layout } from 'antd';
-// import { HeaderDashboard1 } from './Headers';
+import { HeaderDashboard1 } from './Headers';
 import { SidebarDashboard1 } from './Sidebars';
 import LayoutProvider from './Context';
 
@@ -9,8 +9,11 @@ const { Content } = Layout;
 
 const InnerLayout = () => (
   <Layout>
-    <Content className="p-5">
-      <Outlet />
+    <Content>
+      <HeaderDashboard1 />
+      <div className="p-5">
+        <Outlet />
+      </div>
     </Content>
   </Layout>
 );

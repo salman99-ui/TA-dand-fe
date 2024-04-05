@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import dayjs from 'dayjs';
+import { Link } from 'react-router-dom';
 import { handleHistoryReservasi } from '../../API';
 
 function Index() {
@@ -12,7 +13,7 @@ function Index() {
     <div>
       <div className="flex justify-center">
         <div className="w-1/2">
-          <div className="grid grid-cols-4">
+          <div className="grid grid-cols-3">
             <div className="col-span-1 bg-[#d9d9d9] border border-solid px-2 py-1">
               <p className="m-0">Waktu</p>
             </div>
@@ -20,15 +21,12 @@ function Index() {
               <p className="m-0">Status</p>
             </div>
             <div className="col-span-1 bg-[#d9d9d9] border border-solid px-2 py-1">
-              <p className="m-0">Item</p>
-            </div>
-            <div className="col-span-1 bg-[#d9d9d9] border border-solid px-2 py-1">
-              <p className="m-0">Link Pembayaran</p>
+              <p className="m-0">Action</p>
             </div>
           </div>
           {data &&
             data?.map((item) => (
-              <div className="grid grid-cols-4">
+              <div className="grid grid-cols-3">
                 <div className="col-span-1 bg-[#dfdfdf] border border-solid px-2 py-1">
                   <p className="m-0">{dayjs(item?.date).format('DD-MM-YYYY')}</p>
                 </div>
@@ -36,10 +34,7 @@ function Index() {
                   <p className="m-0">{item?.status}</p>
                 </div>
                 <div className="col-span-1 bg-[#dfdfdf] border border-solid px-2 py-1">
-                  <p className="m-0">-</p>
-                </div>
-                <div className="col-span-1 bg-[#dfdfdf] border border-solid px-2 py-1">
-                  <p className="m-0">-</p>
+                  <Link to={`/reservasi/${item?.id}`}>Detail</Link>
                 </div>
               </div>
             ))}
