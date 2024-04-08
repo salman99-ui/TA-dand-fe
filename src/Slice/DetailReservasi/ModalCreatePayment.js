@@ -52,6 +52,9 @@ function ModalCreatePayment({ id, amount, detail, handleClose }) {
           message.success(
             'Berhasil generate pembayaran,silahkan bayar menggunakan VA tersedia',
           );
+          setTimeout(() => {
+            window.location.reload();
+          }, 1500);
         });
       });
     });

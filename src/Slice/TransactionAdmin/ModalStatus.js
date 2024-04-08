@@ -22,7 +22,7 @@ function ModalStatus({ data, handleClose }) {
         message.success('Status berhasil dirubah');
       }
       setTimeout(() => {
-        handleClose();
+        window.location.reload();
       }, 1000);
     });
   };

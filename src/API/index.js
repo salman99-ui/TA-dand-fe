@@ -54,6 +54,18 @@ export const handleDetailReservasi = (id, success) => {
   });
 };
 
+export const handleGetTransaksiPayment = (setData) => {
+  axios.get(`${env}/total-transaksi/payment`).then((response) => {
+    setData(response.data.data);
+  });
+};
+
+export const handleGetTotalTransaksi = (setData) => {
+  axios.get(`${env}/total-transaksi`).then((response) => {
+    setData(response.data.data);
+  });
+};
+
 export const handlePayment = (body, success) => {
   axios.post(`${env}/create-payment`, body).then((result) => {
     success();

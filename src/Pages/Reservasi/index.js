@@ -116,6 +116,7 @@ function Index() {
               <button
                 type="button"
                 className="px-5 py-2 rounded-md bg-transparent border border-solid border-black text-black"
+                onClick={() => navigate(-1)}
               >
                 Cancel
               </button>
