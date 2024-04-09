@@ -26,13 +26,13 @@ function Index() {
             <div>Email {data?.email}</div>
             <div>Nama {data?.nama}</div>
             <div>Status {data?.status || '-'} </div>
-            <div>Status p_external_idembayaran {data?.p_status || '-'}</div>
+            <div>Status Pembayaran {data?.p_status || '-'}</div>
             <div>Alamat {data?.nama || '-'}</div>
             <div>Tanggal {dayjs(data?.date).format('DD-MM-YYYY') || '-'}</div>
             <div>Harga Rp. {data?.amount}</div>
             <div>Virtual Account {data?.p_va || '-'}</div>
             <div>
-              {data?.status === 'DONE' && (
+              {data?.status === 'DONE' && data?.p_status !== 'DONE' && (
                 <button type="button" onClick={() => setIdReservasi(data?.id)}>
                   Bayar
                 </button>
