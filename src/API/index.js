@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { message } from 'antd';
 
-const env = 'http://3.27.135.165:4000';
+const env = 'http://3.26.223.85:4000';
 
 export const handleLogin = (body) => {
   axios.post(`${env}/login`, body).then((response) => {
