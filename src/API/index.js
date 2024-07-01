@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { message } from 'antd';
 
-const env = 'http://3.26.223.85:4000';
+const env = 'https://wrlrbkztfarosofsud4s5dyexy0tmsbd.lambda-url.ap-southeast-2.on.aws';
 
 export const handleLogin = (body) => {
   axios.post(`${env}/login`, body).then((response) => {
@@ -88,7 +88,7 @@ export const handleCreateVa = (body, success) => {
   };
 
   axios
-    .post(`https://api.xendit.co/callback_virtual_accounts`, body, headers)
+    .post(`https://front.rynern.my.id/api/payment`, body, headers)
     .then((responseXendit) => {
       success(responseXendit);
     });

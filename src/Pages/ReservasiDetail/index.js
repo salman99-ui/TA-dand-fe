@@ -22,7 +22,6 @@ function Index() {
         {data && (
           <div>
             <div>Id Reservasi {data?.id}</div>
-            <div>Eksternal Id Reservasi {data?.p_external_id || '-'}</div>
             <div>Email {data?.email}</div>
             <div>Nama {data?.nama}</div>
             <div>Status {data?.status || '-'} </div>
