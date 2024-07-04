@@ -88,7 +88,7 @@ export const handleCreateVa = (body, success) => {
   };
 
   axios
-    .post(`https://front.rynern.my.id/api/payment`, body, headers)
+    .post(`https://api.rynern.my.id/api/payment`, body, headers)
     .then((responseXendit) => {
       success(responseXendit);
     });
