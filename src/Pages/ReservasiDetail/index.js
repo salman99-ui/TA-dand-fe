@@ -26,7 +26,7 @@ function Index() {
             <div>Nama {data?.nama}</div>
             <div>Status {data?.status || '-'} </div>
             <div>Status Pembayaran {data?.p_status || '-'}</div>
-            <div>Alamat {data?.nama || '-'}</div>
+            <div>Alamat {data?.alamat || '-'}</div>
             <div>Tanggal {dayjs(data?.date).format('DD-MM-YYYY') || '-'}</div>
             <div>Harga Rp. {data?.amount}</div>
             <div>Virtual Account {data?.p_va || '-'}</div>
