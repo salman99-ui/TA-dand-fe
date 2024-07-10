@@ -110,7 +110,7 @@ function Index() {
               label="Tanggal"
               rules={[{ required: true, message: 'silahkan isi alamat' }]}
             >
-              <DatePicker format="DD-MM-YYYYY" />
+              <DatePicker format="DD-MM-YYYY" />
             </Form.Item>
             <div className="flex justify-end gap-3 w-full">
               <button

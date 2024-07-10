@@ -48,7 +48,6 @@ export const handleUpdateReservasi = (id, body, success) => {
 };
 
 export const handleDetailReservasi = (id, success) => {
-  console.log(id);
   axios.get(`${env}/reservasi/${id}`).then((result) => {
     success(result.data.data);
   });

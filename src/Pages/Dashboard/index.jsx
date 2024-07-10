@@ -37,7 +37,7 @@ const Dashboard = () => {
       </div>
       <div className="mt-64">
         <p className="m-0 mb-4 text-5xl font-bold text-center">
-          Selamat Datang Di Bengkel aHASS Nabila Motor
+          Selamat Datang Di Bengkel AHASS Nabila Motor
         </p>
         <p className="font-bold m-0 text-xl text-center">
           Gunakan layanan Booking Service untuk memilih waktu kunjungan servis sesuai
