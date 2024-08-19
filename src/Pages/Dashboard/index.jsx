@@ -10,11 +10,11 @@ const Dashboard = () => {
     }
   }, []);
   return (
-    <div>
-      <p className="m-0 mb-4 text-2xl md:text-[72px] font-bold text-center">
+    <div className="md:mt-32">
+      <p className="m-0 mb-10 md:mb-16 text-2xl md:text-[72px] font-bold text-center">
         AHASS Nabila
       </p>
-      <p className="text-3xl md:text-[60px] m-0 font-semibold text-[#464E5F] text-center">
+      <p className="text-3xl mb-20 md:text-[60px] m-0 font-semibold text-[#464E5F] text-center">
         SERVIS YANG PASTI DARI YANG AHLI
       </p>
       <div className="mt-7">
