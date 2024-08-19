@@ -12,7 +12,7 @@ function Index() {
   return (
     <div>
       <div className="flex justify-center">
-        <div className="w-1/2">
+        <div className="w-full md:w-1/2">
           <div className="grid grid-cols-3">
             <div className="col-span-1 bg-[#d9d9d9] border border-solid px-2 py-1">
               <p className="m-0">Waktu</p>

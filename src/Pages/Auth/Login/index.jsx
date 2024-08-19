@@ -11,15 +11,17 @@ function Index() {
   return (
     <div className="min-h-screen">
       <div className="min-h-screen">
-        <div className="flex min-h-screen">
-          <div className="flex-1 border-x-0 border-t-0 border-b-0 border-r border-solid border-[#1E1E1E]">
+        <div className="pt-36 md:pt-0 md:flex min-h-screen">
+          <div className="flex-1 border-x-0 border-t-0 border-b-0 border-r border-solid border-[#1E1E1E] mb-5 md:mb-0">
             <div className="flex items-center h-full pl-6">
-              <p className="m-0 text-5xl font-bold">Bengkel Ahass Nabila</p>
+              <p className="m-0 text-xl md:before:text-5xl font-bold">
+                Bengkel Ahass Nabila
+              </p>
             </div>
           </div>
           <div className="flex-1">
-            <div className="px-5 flex items-center justify-center h-full">
-              <div className="w-2/3">
+            <div className="px-5 flex w-full items-center justify-center h-full">
+              <div className="w-full md:w-2/3">
                 <Form onFinish={handleSubmit}>
                   <Form.Item
                     name="email"
