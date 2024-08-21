@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { message } from 'antd';
 
-const env = 'https://wrlrbkztfarosofsud4s5dyexy0tmsbd.lambda-url.ap-southeast-2.on.aws';
+const env = 'https://z7kzb5jz7gefzhyaldgq47bhmy0gjldy.lambda-url.us-east-1.on.aws';
 
 export const handleLogin = (body) => {
   axios.post(`${env}/login`, body).then((response) => {
