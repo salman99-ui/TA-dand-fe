@@ -65,53 +65,101 @@ function Index() {
   };
   return (
     <div>
-      <div className="bg-[#696F79] pl-7 py-4">
-        <span className="text-xl font-semibold">Reservasi Servis</span>
-      </div>
       <div className="mt-4">
-        <p className="text-xl font-semibold text-black mb-4">Informasi Data Diri</p>
+        <p className="text-xl font-semibold text-[#e65454] mb-8">INFORMASI DATA DIRI</p>
         <div className="">
           <Form layout="vertical" onFinish={handleForm}>
-            <Form.Item
-              name="nama"
-              label="Nama"
-              rules={[{ required: true, message: 'silahkan isi nama' }]}
-            >
-              <Input size="large" placeholder="Nama Lengkap" />
-            </Form.Item>
-            <Form.Item
-              name="email"
-              label="Email"
-              rules={[{ required: true, message: 'silahkan isi email' }]}
-            >
-              <Input size="large" placeholder="example@gmail.com" />
-            </Form.Item>
-            <Form.Item
-              name="hp"
-              label="No Handphone"
-              rules={[{ required: true, message: 'silahkan isi no hp' }]}
-            >
-              <Input size="large" placeholder="0892151212" />
-            </Form.Item>
-            <Form.Item
-              name="alamat"
-              label="Alamat"
-              rules={[{ required: true, message: 'silahkan isi alamat' }]}
-            >
-              <Input size="large" placeholder="Alamat Lengkap" />
-            </Form.Item>
+            <div className="flex ">
+              <div className="w-[180px]">
+                <span className="text-gray-400">NAMA</span>
+              </div>
+              <div className="flex-1">
+                <Form.Item
+                  name="nama"
+                  label=""
+                  rules={[{ required: true, message: 'silahkan isi nama' }]}
+                >
+                  <Input size="large" placeholder="Nama Lengkap" />
+                </Form.Item>
+              </div>
+            </div>
+            <div className="flex ">
+              <div className="w-[180px]">
+                <span className="text-gray-400">EMAIL</span>
+              </div>
+              <div className="flex-1">
+                <Form.Item
+                  name="email"
+                  label=""
+                  rules={[{ required: true, message: 'silahkan isi email' }]}
+                >
+                  <Input size="large" placeholder="example@gmail.com" />
+                </Form.Item>
+              </div>
+            </div>
+
+            <div className="flex ">
+              <div className="w-[180px]">
+                <span className="text-gray-400">No Handphone</span>
+              </div>
+              <div className="flex-1">
+                <Form.Item
+                  name="hp"
+                  label=""
+                  rules={[{ required: true, message: 'silahkan isi no hp' }]}
+                >
+                  <Input size="large" placeholder="0892151212" />
+                </Form.Item>
+              </div>
+            </div>
+            <div className="flex ">
+              <div className="w-[180px]">
+                <span className="text-gray-400">Alamat</span>
+              </div>
+              <div className="flex-1">
+                <Form.Item
+                  name="alamat"
+                  label=""
+                  rules={[{ required: true, message: 'silahkan isi alamat' }]}
+                >
+                  <Input size="large" placeholder="Alamat Lengkap" />
+                </Form.Item>
+              </div>
+            </div>
+
             <div className="mb-3">
-              <p className="text-black font-semibold text-xl m-0">
+              <p className="text-[#e65454] mb-8 font-semibold text-xl m-0">
                 Pilih Waktu kedatangan
               </p>
             </div>
-            <Form.Item
-              name="date"
-              label="Tanggal"
-              rules={[{ required: true, message: 'silahkan isi alamat' }]}
-            >
-              <DatePicker format="DD-MM-YYYY" />
-            </Form.Item>
+            <div className="flex ">
+              <div className="w-[180px]">
+                <span className="text-gray-400">Tanggal</span>
+              </div>
+              <div className="flex-1">
+                <Form.Item
+                  name="date"
+                  label=""
+                  rules={[{ required: true, message: 'silahkan isi alamat' }]}
+                >
+                  <DatePicker format="DD-MM-YYYY" />
+                </Form.Item>
+              </div>
+            </div>
+            <div className="flex ">
+              <div className="w-[180px]">
+                <span className="text-gray-400">Jam</span>
+              </div>
+              <div className="flex-1">
+                <Form.Item
+                  name="date"
+                  label=""
+                  rules={[{ required: true, message: 'silahkan isi alamat' }]}
+                >
+                  <DatePicker picker="time" format="YYYY" />
+                </Form.Item>
+              </div>
+            </div>
             <div className="flex justify-end gap-3 w-full">
               <button
                 type="button"
@@ -123,7 +171,7 @@ function Index() {
 
               <button
                 type="submit"
-                className="px-5 py-2 rounded-md bg-black border border-solid border-black text-center text-white"
+                className="px-5 py-2 rounded-md bg-red-400 text-center text-white"
               >
                 Submit
               </button>
