@@ -1,12 +1,9 @@
 import { DatePicker, Form, Input, message } from 'antd';
-import { Buffer } from 'buffer';
 import React from 'react';
 import dayjs from 'dayjs';
 // import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { handleReservasi } from '../../API';
-
-const env = 'http://localhost:4000';
 
 function Index() {
   const navigate = useNavigate();
