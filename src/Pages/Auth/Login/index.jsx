@@ -27,7 +27,7 @@ function Index() {
                 <img alt="" src={Logo} width={100} />
               </div>
               <p className="text-4xl text-[#929292]">
-                Bengkel Ahaas <br />
+                Bengkel Ahass <br />
                 Nabila
               </p>
             </div>

@@ -31,26 +31,26 @@ function Index() {
           <div>Total transaksi Berhasil {dataTotal || '-'}</div>
           <div className="mt-6">
             <div className="grid grid-cols-7">
-              <div className="col-span-1 bg-[#d9d9d9] border border-solid px-2 py-1">
-                <p className="m-0">Waktu</p>
+              <div className="col-span-1 bg-red-400 border border-solid px-2 py-1">
+                <p className="m-0 text-white">Waktu</p>
               </div>
-              <div className="col-span-1 bg-[#d9d9d9] border border-solid px-2 py-1">
-                <p className="m-0">Nama</p>
+              <div className="col-span-1 bg-red-400 border border-solid px-2 py-1">
+                <p className="m-0 text-white">Nama</p>
               </div>
-              <div className="col-span-1 bg-[#d9d9d9] border border-solid px-2 py-1">
-                <p className="m-0">Email</p>
+              <div className="col-span-1 bg-red-400 border border-solid px-2 py-1">
+                <p className="m-0 text-white">Email</p>
               </div>
-              <div className="col-span-1 bg-[#d9d9d9] border border-solid px-2 py-1">
-                <p className="m-0">Harga</p>
+              <div className="col-span-1 bg-red-400 border border-solid px-2 py-1">
+                <p className="m-0 text-white">Harga</p>
               </div>
-              <div className="col-span-1 bg-[#d9d9d9] border border-solid px-2 py-1">
-                <p className="m-0">Status</p>
+              <div className="col-span-1 bg-red-400 border border-solid px-2 py-1">
+                <p className="m-0 text-white">Status</p>
               </div>
-              <div className="col-span-1 bg-[#d9d9d9] border border-solid px-2 py-1">
-                <p className="m-0">Status Pembayaran</p>
+              <div className="col-span-1 bg-red-400 border border-solid px-2 py-1">
+                <p className="m-0 text-white">Status Pembayaran</p>
               </div>
-              <div className="col-span-1 bg-[#d9d9d9] border border-solid px-2 py-1">
-                <p className="m-0">Action</p>
+              <div className="col-span-1 bg-red-400 border border-solid px-2 py-1">
+                <p className="m-0 text-white">Action</p>
               </div>
             </div>
             {data &&

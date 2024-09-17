@@ -143,20 +143,7 @@ function Index() {
                 </Form.Item>
               </div>
             </div>
-            <div className="flex ">
-              <div className="w-[180px]">
-                <span className="text-gray-400">Jam</span>
-              </div>
-              <div className="flex-1">
-                <Form.Item
-                  name="date"
-                  label=""
-                  rules={[{ required: true, message: 'silahkan isi alamat' }]}
-                >
-                  <DatePicker picker="time" format="YYYY" />
-                </Form.Item>
-              </div>
-            </div>
+
             <div className="flex justify-end gap-3 w-full">
               <button
                 type="button"
